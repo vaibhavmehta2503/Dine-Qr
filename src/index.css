@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+:root {
+  --dineqr-gold: #D4AF37;
+  --dineqr-blue: #204080;
+  --dineqr-cream: #FFF6E5;
+  --dineqr-brown: #2D2320;
+  --dineqr-salmon: #FF9E6D;
+  --dineqr-gray: #F7F7FA;
+  --dineqr-green: #24C486;
+}
+
+body {
+  background-color: var(--dineqr-cream);
+  background-image: url('data:image/svg+xml;utf8,<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.04"><circle cx="60" cy="60" r="50" stroke="%23D4AF37" stroke-width="4"/><rect x="30" y="30" width="20" height="60" rx="10" fill="%23D4AF37"/><rect x="70" y="30" width="20" height="60" rx="10" fill="%23D4AF37"/></g></svg>');
+  background-repeat: repeat;
+  background-size: 240px 240px;
+}
+
+.card {
+  background: #fff;
+  border: 2.5px solid var(--dineqr-gold);
+  border-radius: 1.25rem;
+  box-shadow: 0 6px 24px 0 rgba(212,175,55,0.10);
+  padding-bottom: 0.75rem;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.card-header {
+  color: var(--dineqr-blue);
+  font-family: serif;
+  font-weight: bold;
+}
+
+.card-title {
+  color: var(--dineqr-brown);
+  font-family: serif;
+  font-weight: bold;
+}
+
+.btn-gold {
+  background: var(--dineqr-gold);
+  color: var(--dineqr-blue);
+  border-radius: 9999px;
+  font-weight: bold;
+  box-shadow: 0 2px 8px 0 rgba(212,175,55,0.12);
+  transition: box-shadow 0.2s, transform 0.2s, background 0.2s, color 0.2s;
+  height: 3rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  min-width: unset;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.btn-gold:hover:not(:disabled) {
+  box-shadow: 0 4px 16px 0 rgba(32,64,128,0.15);
+  color: #fff;
+  background: linear-gradient(90deg, var(--dineqr-gold) 90%, #ffe066 100%);
+}
+
+.btn-blue {
+  background: var(--dineqr-blue);
+  color: #fff;
+  border-radius: 9999px;
+  font-weight: bold;
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.status-pending { background: var(--dineqr-blue); color: #fff; }
+.status-preparing { background: var(--dineqr-salmon); color: #fff; }
+.status-ready { background: var(--dineqr-gold); color: #fff; }
+.status-completed { background: var(--dineqr-green); color: #fff; }
+
+/* Use .card, .btn-gold, .btn-blue, .status-badge, etc. in components */
+
+/* Slow bounce animation for chat button */
+.animate-bounce-slow {
+  animation: bounce-slow 2.2s infinite;
+}
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10%); }
+}
+
+/* Chat card gradient background */
+.chat-gradient {
+  background: linear-gradient(135deg, #fff 80%, var(--dineqr-cream) 100%);
+}
+
+/* Remove header gradient, use solid blue with gold border */
+.chat-header-gradient {
+  background: var(--dineqr-blue);
+  border-bottom: 3px solid var(--dineqr-gold);
+}
+
+/* Chat bubbles */
+.chat-bubble-user {
+  background: var(--dineqr-blue);
+  color: #fff;
+  border-bottom-right-radius: 0.5rem;
+  border-top-right-radius: 1.5rem;
+  border-top-left-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+  box-shadow: 0 2px 12px 0 rgba(32,64,128,0.10);
+}
+.chat-bubble-bot {
+  background: var(--dineqr-gold);
+  color: var(--dineqr-brown);
+  border-bottom-left-radius: 0.5rem;
+  border-top-right-radius: 1.5rem;
+  border-top-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  box-shadow: 0 2px 12px 0 rgba(212,175,55,0.10);
+}
+
+/* Fade-in animation for new messages */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 0.4s ease;
+}
+
+/* Chat input area improvements */
+.chat-input-area {
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.chat-input-area input {
+  min-height: 3rem;
+  font-size: 1rem;
+  vertical-align: middle;
+  height: 3rem;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.chat-input-area input:focus {
+  box-shadow: 0 0 0 2px var(--dineqr-blue);
+  border-color: var(--dineqr-blue);
+}
+.chat-input-area input:disabled {
+  background: #f3f3f3;
+  color: #aaa;
+}
