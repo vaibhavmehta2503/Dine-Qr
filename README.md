@@ -72,10 +72,10 @@ A comprehensive restaurant management platform that digitizes the dining experie
    PORT=5000
    JWT_SECRET=your_jwt_secret_here
    CLERK_SECRET_KEY=your_clerk_secret_key
-   GOOGLE_API_KEY=your_google_gemini_api_key
-   TWILIO_ACCOUNT_SID=your_twilio_sid
-   TWILIO_AUTH_TOKEN=your_twilio_token
-   TWILIO_PHONE_NUMBER=your_twilio_phone
+   GOOGLE_API_KEY=your_gemini_api_key_here
+   TWILIO_ACCOUNT_SID=your_twilio_sid_here
+   TWILIO_AUTH_TOKEN=your_twilio_token_here
+   TWILIO_PHONE_NUMBER=your_twilio_phone_here
    ```
 
 5. **Start the development servers**
